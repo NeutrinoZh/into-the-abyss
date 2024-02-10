@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0108951bb5b651249b4b8889736efa86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_sectionHeight: 0
+  m_sectionHeight: 15
   m_speed: 1
   m_acceleration: 0.1
 --- !u!114 &6796292629134703856

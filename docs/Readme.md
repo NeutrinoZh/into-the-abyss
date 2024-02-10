@@ -12,13 +12,9 @@ This project follows best practices and utilizes various technologies to create 
 
 - **UI Toolkit:** The Unity UI Toolkit is employed for creating flexible and dynamic user interfaces.
 
-- **Dotween:** Dotween is used for smooth and efficient tweening and animation.
-
 - **URP (VFX Graphs/Shader Graphs):** The Universal Render Pipeline (URP) is utilized along with Visual Effects Graphs and Shader Graphs to achieve stunning visual effects.
 
 ## Tools and Workflow
-
-- **Git Flow:** The project follows the Git Flow branching model for a structured and collaborative version control workflow.
 
 - **Code Quality with Dotnet Formatter:** To maintain high code quality and ensure a consistent coding style, we've configured a .editorconfig file. This file includes predefined rules for naming conventions, indentation, and other code formatting preferences. 
 
