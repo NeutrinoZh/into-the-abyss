@@ -125,3 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 066dc3f612a85a17b8d54ade8ff75a75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_step: {x: 1.3, y: 0, z: 0}
+  m_sensitivity: 80
+  m_leftBorder: 1
+  m_rightBorder: 3
