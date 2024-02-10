@@ -10,8 +10,6 @@ This project follows best practices and utilizes various technologies to create 
 
 - **MVP + Services Pattern:** The project architecture is based on the Model-View-Presenter pattern along with the Services pattern for better separation of concerns.
 
--  **Zenject DI Framework:** Zenject is used as the dependency injection framework to manage object composition and support the Inversion of Control (IoC) principle.
-
 - **UI Toolkit:** The Unity UI Toolkit is employed for creating flexible and dynamic user interfaces.
 
 - **Dotween:** Dotween is used for smooth and efficient tweening and animation.

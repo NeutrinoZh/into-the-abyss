@@ -9,7 +9,7 @@ indent_style = space
 indent_size = 2
 
 # C# files
-[Assets/DepthOfDarkness/**/*.cs]
+[Assets/IntoTheAbyss/**/*.cs]
 
 #### Core EditorConfig Options ####
 
