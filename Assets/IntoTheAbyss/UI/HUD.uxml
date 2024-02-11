@@ -1,3 +1,3 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Label tabindex="-1" text="Score: {}" parse-escape-sequences="false" display-tooltip-when-elided="false" enable-rich-text="false" style="align-self: center; -unity-font-style: bold; transform-origin: top;" />
+    <ui:Label tabindex="-1" text="Score: {}" parse-escape-sequences="false" display-tooltip-when-elided="false" enable-rich-text="false" style="align-self: center; -unity-font-style: bold; transform-origin: top; margin-top: 15%; font-size: 20px;" />
 </ui:UXML>

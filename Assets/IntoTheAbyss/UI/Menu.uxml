@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; margin-top: 30%; margin-right: 10%; margin-bottom: 50%; margin-left: 10%; justify-content: space-around; background-color: rgb(255, 255, 255);">
+        <ui:Label tabindex="-1" text="Into&#10;The&#10;Abyss" parse-escape-sequences="false" display-tooltip-when-elided="false" enable-rich-text="false" style="align-self: center; -unity-font-style: bold; font-size: 20px; -unity-text-align: upper-center;" />
+        <ui:Label tabindex="-1" text="Game Over" parse-escape-sequences="false" display-tooltip-when-elided="false" enable-rich-text="false" name="GameOver" style="align-self: center; -unity-font-style: bold; font-size: 11px; color: rgb(87, 83, 83);" />
+        <ui:Label tabindex="-1" text="Score: {}" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-font-style: italic; -unity-text-align: upper-center; font-size: 11px;" />
+        <ui:VisualElement style="flex-grow: 1; justify-content: center; background-color: rgba(0, 0, 0, 0);">
+            <ui:Button text="Retry" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Retry" />
+        </ui:VisualElement>
+        <ui:Button text="Sound Off/On" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SoundSwitcher" />
+    </ui:VisualElement>
+</ui:UXML>
