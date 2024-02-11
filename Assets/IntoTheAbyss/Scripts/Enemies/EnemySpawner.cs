@@ -7,7 +7,6 @@ namespace IntoTheAbyss.Game {
         [SerializeField] private List<Transform> m_spawnPoints;
         private readonly List<Transform> m_enemies = new() { };
 
-
         private void Start() {
             var fallingController = Player.Instance.GetComponent<FallingController>();
             fallingController.OnPerSection += SpawnEnemy;
