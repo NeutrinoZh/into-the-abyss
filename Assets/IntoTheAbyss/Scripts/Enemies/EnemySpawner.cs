@@ -14,7 +14,22 @@ namespace IntoTheAbyss.Game {
         }
 
         private void SpawnEnemy() {
-            var enemy = EnemyManager.Instance.SpawnEnemy(EnemyType.SIDE_SPIKE);
+            EnemyType type = (EnemyType)Random.Range(0, 3);
+            switch (type) {
+                case EnemyType.SIDE_SPIKE:
+                    SpawnSideSpike(false);
+                    break;
+                case EnemyType.SIDE_LONG_SPIKE:
+                    SpawnSideSpike(true);
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+        private void SpawnSideSpike(bool isLong) {
+            var enemy = EnemyManager.Instance.SpawnEnemy(isLong ? EnemyType.SIDE_LONG_SPIKE : EnemyType.SIDE_SPIKE);
 
             var isRight = Random.Range(0, 2) == 0;
             enemy.transform.position = m_spawnPoints[isRight ? ^1 : 0].position;
