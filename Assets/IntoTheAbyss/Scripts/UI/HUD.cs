@@ -28,5 +28,13 @@ namespace IntoTheAbyss.UI {
         private void ChangeScoreHandle() {
             m_score.text = m_score_pattern.Replace("{}", SessionManager.Instance.Score.ToString());
         }
+
+        public void Show() {
+            m_document.rootVisualElement.style.display = DisplayStyle.Flex;
+        }
+
+        public void Hide() {
+            m_document.rootVisualElement.style.display = DisplayStyle.None;
+        }
     }
 }

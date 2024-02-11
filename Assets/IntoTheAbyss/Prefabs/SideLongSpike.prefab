@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7477403029454985076}
   - component: {fileID: 4819018965796773177}
-  - component: {fileID: 4202788331230432573}
+  - component: {fileID: 8874344332970835968}
   m_Layer: 0
   m_Name: SideLongSpike
   m_TagString: Enemy
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4202788331230432573
-BoxCollider2D:
+--- !u!68 &8874344332970835968
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -117,16 +117,14 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.21133333}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.50680673, y: -0.2902738}
+  - {x: -0.011915803, y: 0.5817766}
+  - {x: 0.51435614, y: -0.2920855}
+  - {x: -0.50830245, y: -0.2897371}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

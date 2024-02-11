@@ -12,7 +12,6 @@ namespace IntoTheAbyss.Game {
             if (!_other.transform.CompareTag(c_enemyTag))
                 return;
 
-            Time.timeScale = 0;
             OnDie?.Invoke();
         }
     }

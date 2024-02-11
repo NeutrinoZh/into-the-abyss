@@ -1,5 +1,7 @@
 using System;
 
+using IntoTheAbyss.UI;
+
 using UnityEngine;
 
 namespace IntoTheAbyss.Game {
@@ -18,6 +20,7 @@ namespace IntoTheAbyss.Game {
         // ==============================================//
 
         public event Action OnChangeScore = null;
+        public event Action OnRetry = null;
 
         private int m_score;
         public int Score {
@@ -28,13 +31,22 @@ namespace IntoTheAbyss.Game {
             }
         }
 
+        [SerializeField] private UIPages m_pages;
+
         private void Start() {
             var fallingController = Player.Instance.GetComponent<FallingController>();
             fallingController.OnPerSection += Scoring;
+
+            m_pages.Menu.OnRetry += Retry;
         }
 
         private void Scoring() {
             Score += 1;
+        }
+
+        private void Retry() {
+            Score = 0;
+            OnRetry?.Invoke();
         }
     }
 }

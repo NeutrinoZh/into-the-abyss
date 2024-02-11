@@ -13,6 +13,13 @@ namespace IntoTheAbyss.Game {
         [SerializeField] private float m_speed;
         [SerializeField] private float m_acceleration;
 
+        private void Start() {
+            SessionManager.Instance.OnRetry += () => {
+                m_speed = 3f;
+                m_nextSection = 0;
+            };
+        }
+
         private void Update() {
             m_speed += m_acceleration * Time.deltaTime;
             transform.position += m_speed * Time.deltaTime * Vector3.down;

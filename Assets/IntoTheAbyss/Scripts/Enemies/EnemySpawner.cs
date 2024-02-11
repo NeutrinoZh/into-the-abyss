@@ -10,6 +10,11 @@ namespace IntoTheAbyss.Game {
         private void Start() {
             var fallingController = Player.Instance.GetComponent<FallingController>();
             fallingController.OnPerSection += SpawnEnemy;
+
+            SessionManager.Instance.OnRetry += () => {
+                foreach (var enemy in m_enemies)
+                    EnemyManager.Instance.DestroyEnemy(enemy);
+            };
         }
 
         private void SpawnEnemy() {
