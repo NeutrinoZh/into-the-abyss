@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7477403029454985076}
   - component: {fileID: 4819018965796773177}
   - component: {fileID: 5678736217691795078}
-  - component: {fileID: -4182518098341252008}
+  - component: {fileID: 5036039537193094692}
   m_Layer: 0
   m_Name: MiddleSpike
   m_TagString: Enemy
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_rotateVector: {x: 0, y: 0, z: 100}
---- !u!68 &-4182518098341252008
-EdgeCollider2D:
+--- !u!60 &5036039537193094692
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -132,13 +132,18 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.28866667}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
-  - {x: -0.5086822, y: -0.2957701}
-  - {x: 0.0024290755, y: 0.5810636}
-  - {x: 0.50116247, y: -0.288881}
-  - {x: -0.50846326, y: -0.2958314}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+    m_Paths:
+    - - {x: 0, y: 0.5773587}
+      - {x: -0.5, y: -0.28866667}
+      - {x: 0.5, y: -0.28866667}
+  m_UseDelaunayMesh: 0
