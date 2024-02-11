@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7477403029454985076}
   - component: {fileID: 4819018965796773177}
-  - component: {fileID: 6464366541514216683}
   - component: {fileID: 5678736217691795078}
+  - component: {fileID: -4182518098341252008}
   m_Layer: 0
   m_Name: MiddleSpike
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,7 +86,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &6464366541514216683
+--- !u!114 &5678736217691795078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3906933040624662020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab6a7659422924e1794acfe27333feb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_rotateVector: {x: 0, y: 0, z: 100}
+--- !u!68 &-4182518098341252008
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,24 +134,11 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.5062349, y: -0.28809068}
-  - {x: -0.0025859731, y: 0.584248}
-  - {x: 0.5011695, y: -0.28965595}
-  - {x: -0.4971233, y: -0.28769454}
+  - {x: -0.5086822, y: -0.2957701}
+  - {x: 0.0024290755, y: 0.5810636}
+  - {x: 0.50116247, y: -0.288881}
+  - {x: -0.50846326, y: -0.2958314}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &5678736217691795078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3906933040624662020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab6a7659422924e1794acfe27333feb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_rotateVector: {x: 0, y: 0, z: 100}
