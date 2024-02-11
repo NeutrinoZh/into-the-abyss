@@ -12,10 +12,10 @@ namespace IntoTheAbyss.Game {
             fallingController.OnPerSection += SpawnEnemy;
 
             SessionManager.Instance.OnRetry += () => {
-                foreach (var enemy in m_enemies) {
+                foreach (var enemy in m_enemies)
                     EnemyManager.Instance.DestroyEnemy(enemy);
-                    m_enemies.Remove(m_enemies[0]);
-                }
+
+                m_enemies.Clear();
             };
         }
 
