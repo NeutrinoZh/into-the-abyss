@@ -31,20 +31,30 @@ namespace IntoTheAbyss.Game {
             }
         }
 
+        public int HighScore {
+            get => PlayerPrefs.GetInt("HighScore");
+            set => PlayerPrefs.SetInt("HighScore", value);
+        }
+
         [SerializeField] private UIPages m_pages;
 
         private void Start() {
-            var fallingController = Player.Instance.GetComponent<FallingController>();
-            fallingController.OnPerSection += Scoring;
+            Player.Instance.GetComponent<FallingController>().OnPerSection += Scoring;
+            Player.Instance.GetComponent<DieController>().OnDie += DieHandle;
 
-            m_pages.Menu.OnRetry += Retry;
+            m_pages.Menu.OnRetry += RetryHandle;
         }
 
         private void Scoring() {
             Score += 1;
         }
 
-        private void Retry() {
+        private void DieHandle() {
+            if (Score > HighScore)
+                HighScore = Score;
+        }
+
+        private void RetryHandle() {
             Score = 0;
             OnRetry?.Invoke();
         }
