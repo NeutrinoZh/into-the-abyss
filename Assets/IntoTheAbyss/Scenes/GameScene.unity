@@ -780,6 +780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b96751b7ed85649a2ec41e7a8f94c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_enemyPrefab: {fileID: 7873595358310719801, guid: 0ea28eb5c58239d58bb8286435b947ab, type: 3}
 --- !u!1 &1711018651
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,7 +955,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbed16dd44747bd7dae9c2c3d1a41801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_spikePrefab: {fileID: 7477403029454985076, guid: 309b2ec126aa66c9da08652ef9cc495c, type: 3}
   m_spawnPoints:
   - {fileID: 779495818}
   - {fileID: 1888618201}
