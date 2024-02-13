@@ -51,13 +51,21 @@ namespace IntoTheAbyss.Game {
 
         private void SpawnSideSpike(Transform _enemy) {
             var isRight = Random.Range(0, 2) == 0;
-            _enemy.transform.position = m_spawnPoints[isRight ? ^1 : 0].position;
+            _enemy.transform.parent.position = m_spawnPoints[isRight ? ^1 : 0].position;
+
+            _enemy.transform.localPosition = new Vector3(
+                isRight ?
+                    -Mathf.Abs(_enemy.transform.localPosition.x) :
+                     Mathf.Abs(_enemy.transform.localPosition.x),
+                _enemy.transform.localPosition.y,
+                _enemy.transform.localPosition.z
+            );
 
             _enemy.transform.localScale = new Vector3(
-                _enemy.transform.localScale.x,
                 isRight ?
-                    -Mathf.Abs(_enemy.transform.localScale.y) :
-                     Mathf.Abs(_enemy.transform.localScale.y),
+                    -Mathf.Abs(_enemy.transform.localScale.x) :
+                     Mathf.Abs(_enemy.transform.localScale.x),
+                _enemy.transform.localScale.y,
                 _enemy.transform.localScale.z
             );
         }
