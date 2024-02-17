@@ -126,13 +126,13 @@ TextureImporter:
       name: popup_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 180
-        width: 206
-        height: 326
+        x: 6
+        y: 577
+        width: 301
+        height: 441
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 82, y: 100, z: 70, w: 140}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -147,12 +147,12 @@ TextureImporter:
       name: popup_1
       rect:
         serializedVersion: 2
-        x: 215
-        y: 418
-        width: 101
-        height: 93
+        x: 320
+        y: 830
+        width: 182
+        height: 189
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,12 +168,12 @@ TextureImporter:
       name: popup_3
       rect:
         serializedVersion: 2
-        x: 323
-        y: 458
-        width: 49
-        height: 40
+        x: 315
+        y: 638
+        width: 182
+        height: 186
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: popup_4
       rect:
         serializedVersion: 2
-        x: 380
-        y: 452
-        width: 45
-        height: 52
+        x: 519
+        y: 635
+        width: 182
+        height: 187
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -207,22 +207,22 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: popup_5
+      name: popup_2
       rect:
         serializedVersion: 2
-        x: 231
-        y: 330
-        width: 73
-        height: 77
+        x: 511
+        y: 829
+        width: 183
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1308db778911a36ad97f7d511d271cb5
-      internalID: 1914638557
+      spriteID: 90cb8d15e4cb7b4bbad05260f7149b64
+      internalID: -297179141
       vertices: []
       indices: 
       edges: []
@@ -243,7 +243,6 @@ TextureImporter:
       popup_2: -297179141
       popup_3: 839851380
       popup_4: -1612635230
-      popup_5: 1914638557
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
