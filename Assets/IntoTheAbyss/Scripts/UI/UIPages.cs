@@ -10,16 +10,15 @@ namespace IntoTheAbyss.UI {
         public Menu Menu => m_menuUI;
 
         private void Start() {
-            var dieController = Player.Instance.GetComponent<DieController>();
-            dieController.OnDie += DieHandle;
-
+            Player.OnDie += DieHandle;
             m_menuUI.OnRetry += RetryHandle;
-            m_hudUI.Hide();
 
+            m_hudUI.Hide();
             Time.timeScale = 0;
         }
 
         private void OnDestroy() {
+            Player.OnDie -= DieHandle;
             m_menuUI.OnRetry -= RetryHandle;
         }
 

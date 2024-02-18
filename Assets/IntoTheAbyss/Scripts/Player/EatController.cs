@@ -1,11 +1,7 @@
-using System;
-
 using UnityEngine;
 
 namespace IntoTheAbyss.Game {
     public class EatController : MonoBehaviour {
-        public event Action OnEat;
-
         private const string c_drumstickTag = "Drumstick";
 
         private void OnCollisionEnter2D(Collision2D _other) {
@@ -16,7 +12,7 @@ namespace IntoTheAbyss.Game {
                 return;
 
             DrumstickManager.Instance.DestroyDrumstick(drumstick.transform);
-            OnEat?.Invoke();
+            Player.OnEat?.Invoke();
         }
     }
 }

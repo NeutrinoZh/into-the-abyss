@@ -15,8 +15,11 @@ namespace IntoTheAbyss.Game {
             m_audioSource = GetComponent<AudioSource>();
             m_eatFX = transform.Find(c_eatFXName).GetComponent<VisualEffect>();
 
-            var eatController = GetComponent<EatController>();
-            eatController.OnEat += PlayEatFX;
+            Player.OnEat += PlayEatFX;
+        }
+
+        private void OnDestroy() {
+            Player.OnEat -= PlayEatFX;
         }
 
         private void PlayEatFX() {

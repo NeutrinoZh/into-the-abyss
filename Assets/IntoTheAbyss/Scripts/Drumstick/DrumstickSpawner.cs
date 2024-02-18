@@ -8,8 +8,11 @@ namespace IntoTheAbyss.Game {
 
 
         private void Start() {
-            var fallingController = Player.Instance.GetComponent<FallingController>();
-            fallingController.OnEveryCell += SpawnDrumstick;
+            Player.OnEveryCellFall += SpawnDrumstick;
+        }
+
+        private void OnDestroy() {
+            Player.OnEveryCellFall -= SpawnDrumstick;
         }
 
         private void SpawnDrumstick() {

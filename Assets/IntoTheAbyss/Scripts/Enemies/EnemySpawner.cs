@@ -8,8 +8,7 @@ namespace IntoTheAbyss.Game {
         private readonly List<Transform> m_enemies = new() { };
 
         private void Start() {
-            var fallingController = Player.Instance.GetComponent<FallingController>();
-            fallingController.OnPerSection += SpawnEnemy;
+            Player.OnPerSectionFall += SpawnEnemy;
 
             SessionManager.Instance.OnRetry += () => {
                 foreach (var enemy in m_enemies)
@@ -17,6 +16,10 @@ namespace IntoTheAbyss.Game {
 
                 m_enemies.Clear();
             };
+        }
+
+        private void OnDestroy() {
+            Player.OnPerSectionFall -= SpawnEnemy;
         }
 
         private void SpawnEnemy() {

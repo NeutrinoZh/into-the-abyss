@@ -8,14 +8,11 @@ namespace IntoTheAbyss.Game {
 
         private void OnEnable() {
             m_cellCount = 0;
-
-            var fallingController = Player.Instance.GetComponent<FallingController>();
-            fallingController.OnEveryCell += IncermentCellCount;
+            Player.OnEveryCellFall += IncermentCellCount;
         }
 
         private void OnDisable() {
-            var fallingController = Player.Instance.GetComponent<FallingController>();
-            fallingController.OnEveryCell -= IncermentCellCount;
+            Player.OnEveryCellFall -= IncermentCellCount;
         }
 
         private void IncermentCellCount() {

@@ -4,10 +4,6 @@ using UnityEngine;
 
 namespace IntoTheAbyss.Game {
     public class FallingController : MonoBehaviour {
-
-        public Action OnPerSection = null;
-        public Action OnEveryCell = null;
-
         private float m_nextSection = 0;
         private float m_nextCell = 0;
 
@@ -30,11 +26,11 @@ namespace IntoTheAbyss.Game {
             transform.position += m_speed * Time.deltaTime * Vector3.down;
 
             if (transform.position.y <= m_nextSection) {
-                OnPerSection?.Invoke();
+                Player.OnPerSectionFall?.Invoke();
                 m_nextSection -= m_sectionHeight;
                 m_nextCell -= m_cellHeight;
             } else if (transform.position.y <= m_nextCell) {
-                OnEveryCell?.Invoke();
+                Player.OnEveryCellFall?.Invoke();
                 m_nextCell -= m_cellHeight;
             }
         }
