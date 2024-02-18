@@ -30,6 +30,7 @@ namespace IntoTheAbyss.Game {
                 if (transform.position.x < m_rightBorder)
                     transform.position += m_step;
 
+                Player.OnSlide?.Invoke();
                 m_can_swap = false;
             }
 
@@ -37,6 +38,7 @@ namespace IntoTheAbyss.Game {
                 if (transform.position.x > m_leftBorder)
                     transform.position -= m_step;
 
+                Player.OnSlide?.Invoke();
                 m_can_swap = false;
             }
         }

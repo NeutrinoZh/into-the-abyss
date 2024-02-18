@@ -3,30 +3,40 @@ using UnityEngine.VFX;
 
 namespace IntoTheAbyss.Game {
     public class PlayerFXController : MonoBehaviour {
+
+        [SerializeField] private AudioSource m_crunchSound;
+        [SerializeField] private AudioSource m_slideSound;
+        [SerializeField] private AudioSource m_deathSound;
+
         private const string c_eatFXName = "EatFX";
-
-        [SerializeField] private AudioClip m_crunch;
-        [SerializeField] private AudioClip m_slide;
-
         private VisualEffect m_eatFX;
-        private AudioSource m_audioSource;
+
 
         private void Start() {
-            m_audioSource = GetComponent<AudioSource>();
             m_eatFX = transform.Find(c_eatFXName).GetComponent<VisualEffect>();
 
             Player.OnEat += PlayEatFX;
+            Player.OnSlide += PlaySlideFX;
+            Player.OnDie += PlayDeathFX;
         }
 
         private void OnDestroy() {
             Player.OnEat -= PlayEatFX;
+            Player.OnSlide -= PlaySlideFX;
+            Player.OnDie -= PlayDeathFX;
         }
 
         private void PlayEatFX() {
             m_eatFX.Play();
+            m_crunchSound.Play();
+        }
 
-            m_audioSource.clip = m_crunch;
-            m_audioSource.Play();
+        private void PlaySlideFX() {
+            m_slideSound.Play();
+        }
+
+        private void PlayDeathFX() {
+            m_deathSound.Play();
         }
     }
 }

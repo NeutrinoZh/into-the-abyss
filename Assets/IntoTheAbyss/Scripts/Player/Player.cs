@@ -18,5 +18,6 @@ namespace IntoTheAbyss.Game {
         public static Action OnDie = null;
         public static Action OnPerSectionFall = null;
         public static Action OnEveryCellFall = null;
+        public static Action OnSlide = null;
     }
 }
