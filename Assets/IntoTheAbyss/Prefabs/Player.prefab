@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sectionHeight: 7
+  m_cellHeight: 4
   m_speed: 2
   m_acceleration: 0.05
 --- !u!114 &6796292629134703856

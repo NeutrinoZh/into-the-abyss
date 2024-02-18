@@ -97,3 +97,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2197a7be03f05309a906412f25d1d34c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_cellCountToDespawn: 3

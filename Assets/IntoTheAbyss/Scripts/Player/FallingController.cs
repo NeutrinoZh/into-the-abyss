@@ -32,7 +32,9 @@ namespace IntoTheAbyss.Game {
             if (transform.position.y <= m_nextSection) {
                 OnPerSection?.Invoke();
                 m_nextSection -= m_sectionHeight;
+                m_nextCell -= m_cellHeight;
             } else if (transform.position.y <= m_nextCell) {
+                OnEveryCell?.Invoke();
                 m_nextCell -= m_cellHeight;
             }
         }
