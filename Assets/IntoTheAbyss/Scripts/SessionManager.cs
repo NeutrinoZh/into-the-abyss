@@ -39,7 +39,7 @@ namespace IntoTheAbyss.Game {
         [SerializeField] private UIPages m_pages;
 
         private void Start() {
-            Player.Instance.GetComponent<FallingController>().OnPerSection += Scoring;
+            Player.Instance.GetComponent<EatController>().OnEat += Scoring;
             Player.Instance.GetComponent<DieController>().OnDie += DieHandle;
 
             m_pages.Menu.OnRetry += RetryHandle;
