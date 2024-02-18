@@ -40,7 +40,7 @@ namespace IntoTheAbyss.Game {
 
         private void Start() {
             Player.OnEat += Scoring;
-            Player.OnDie += DieHandle;
+            Player.OnAfterDie += DieHandle;
 
             m_pages.Menu.OnRetry += RetryHandle;
         }

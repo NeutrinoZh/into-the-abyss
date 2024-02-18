@@ -1788,9 +1788,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5163424462941374915, guid: 67679c95dc7d64acbb2077225428720c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: 4384438552523876309, guid: 67679c95dc7d64acbb2077225428720c, type: 3}
+      propertyPath: m_brokenPlayer
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8745248817065664108, guid: 67679c95dc7d64acbb2077225428720c, type: 3}
       propertyPath: m_LocalPosition.x

@@ -10,7 +10,7 @@ namespace IntoTheAbyss.UI {
         public Menu Menu => m_menuUI;
 
         private void Start() {
-            Player.OnDie += DieHandle;
+            Player.OnAfterDie += DieHandle;
             m_menuUI.OnRetry += RetryHandle;
 
             m_hudUI.Hide();
@@ -18,7 +18,7 @@ namespace IntoTheAbyss.UI {
         }
 
         private void OnDestroy() {
-            Player.OnDie -= DieHandle;
+            Player.OnAfterDie -= DieHandle;
             m_menuUI.OnRetry -= RetryHandle;
         }
 
