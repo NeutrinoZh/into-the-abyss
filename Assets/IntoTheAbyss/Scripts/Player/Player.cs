@@ -1,3 +1,5 @@
+using System;
+
 using UnityEngine;
 
 namespace IntoTheAbyss.Game {
@@ -11,5 +13,12 @@ namespace IntoTheAbyss.Game {
             } else
                 Instance = this;
         }
+
+        public static Action OnEat = null;
+        public static Action OnDie = null;
+        public static Action OnAfterDie = null;
+        public static Action OnPerSectionFall = null;
+        public static Action OnEveryCellFall = null;
+        public static Action OnSlide = null;
     }
 }

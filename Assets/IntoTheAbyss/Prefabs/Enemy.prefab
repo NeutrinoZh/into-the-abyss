@@ -60,7 +60,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7477403029454985076, guid: 8a785fe60466e4f06a51f2c1b5c0277f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.94
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 7477403029454985076, guid: 8a785fe60466e4f06a51f2c1b5c0277f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -182,6 +182,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7873595358310719801}
     m_Modifications:
+    - target: {fileID: 1360040617287822485, guid: 309b2ec126aa66c9da08652ef9cc495c, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3906933040624662020, guid: 309b2ec126aa66c9da08652ef9cc495c, type: 3}
       propertyPath: m_Name
       value: Spike
@@ -192,7 +196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7477403029454985076, guid: 309b2ec126aa66c9da08652ef9cc495c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.295
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 7477403029454985076, guid: 309b2ec126aa66c9da08652ef9cc495c, type: 3}
       propertyPath: m_LocalPosition.y
