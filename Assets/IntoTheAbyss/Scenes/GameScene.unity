@@ -1215,7 +1215,7 @@ GameObject:
   - component: {fileID: 1443162148}
   - component: {fileID: 1443162149}
   m_Layer: 0
-  m_Name: DrumstickSpawner
+  m_Name: BubblesSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1407,7 +1407,7 @@ GameObject:
   - component: {fileID: 1666807217}
   - component: {fileID: 1666807218}
   m_Layer: 0
-  m_Name: Drumsticks
+  m_Name: Bubbles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1440,7 +1440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0375d0ce37823a3a88872464d5871610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_drumstick: {fileID: 18031486351574650, guid: 4b7d82fe1f7e7e70e81f162976c2df81, type: 3}
+  m_bubble: {fileID: 18031486351574650, guid: 4b7d82fe1f7e7e70e81f162976c2df81, type: 3}
 --- !u!1 &1711018651
 GameObject:
   m_ObjectHideFlags: 0

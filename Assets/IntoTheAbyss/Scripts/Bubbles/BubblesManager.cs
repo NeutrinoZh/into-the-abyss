@@ -4,33 +4,33 @@ using UnityEngine;
 using UnityEngine.Pool;
 
 namespace IntoTheAbyss.Game {
-    public class DrumstickManager : MonoBehaviour {
-        public static DrumstickManager Instance { get; private set; }
+    public class BubblesManager : MonoBehaviour {
+        public static BubblesManager Instance { get; private set; }
 
-        [SerializeField] private Drumstick m_drumstick;
-        private ObjectPool<GameObject> m_drumstick_pool;
-        private readonly List<Transform> m_drumsticks = new() { };
+        [SerializeField] private Bubble m_bubble;
+        private ObjectPool<GameObject> m_bubblesPool;
+        private readonly List<Transform> m_bubbles = new() { };
 
         // ==============================================//
         // API 
 
-        public Transform SpawnDrumstick() {
-            var drumstick = m_drumstick_pool.Get();
+        public Transform SpawnBubble() {
+            var drumstick = m_bubblesPool.Get();
             gameObject.SetActive(true);
 
-            m_drumsticks.Add(drumstick.transform);
+            m_bubbles.Add(drumstick.transform);
             return drumstick.transform;
         }
 
-        public void DestroyDrumstick(Transform _drumstick) {
-            m_drumstick_pool.Release(_drumstick.gameObject);
-            m_drumsticks.Remove(_drumstick);
+        public void DestroyBubble(Transform _drumstick) {
+            m_bubblesPool.Release(_drumstick.gameObject);
+            m_bubbles.Remove(_drumstick);
         }
 
         public void Clear() {
-            foreach (var drumstick in m_drumsticks)
-                m_drumstick_pool.Release(drumstick.gameObject);
-            m_drumsticks.Clear();
+            foreach (var drumstick in m_bubbles)
+                m_bubblesPool.Release(drumstick.gameObject);
+            m_bubbles.Clear();
         }
 
         // ==============================================//
@@ -50,8 +50,8 @@ namespace IntoTheAbyss.Game {
         }
 
         private void PoolInit() {
-            m_drumstick_pool = new(
-                () => Instantiate(m_drumstick.gameObject, transform),
+            m_bubblesPool = new(
+                () => Instantiate(m_bubble.gameObject, transform),
                 obj => obj.SetActive(true),
                 obj => obj.SetActive(false),
                 obj => Destroy(obj),
@@ -61,7 +61,7 @@ namespace IntoTheAbyss.Game {
 
         private void SingltonGuard() {
             if (Instance) {
-                Debug.LogWarning("Only one instance of DrumstickManager can be instantinate");
+                Debug.LogWarning("Only one instance of BubblesManager can be instantinate");
                 Destroy(gameObject);
             } else
                 Instance = this;

@@ -8,10 +8,10 @@ namespace IntoTheAbyss.Game {
             if (!_other.transform.CompareTag(c_drumstickTag))
                 return;
 
-            if (!_other.transform.TryGetComponent(out Drumstick drumstick))
+            if (!_other.transform.TryGetComponent(out Bubble drumstick))
                 return;
 
-            DrumstickManager.Instance.DestroyDrumstick(drumstick.transform);
+            BubblesManager.Instance.DestroyBubble(drumstick.transform);
             Player.OnEat?.Invoke();
         }
     }
