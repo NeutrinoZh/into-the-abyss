@@ -12,11 +12,13 @@ namespace IntoTheAbyss.Game {
         [SerializeField] private float m_acceleration;
 
         private void Start() {
-            SessionManager.Instance.OnRetry += () => {
-                m_speed = 3f;
-                m_nextSection = 0;
-                m_nextCell = 0;
-            };
+            SessionManager.Instance.OnRetry += OnRetryHandle;
+            Player.OnDie += OnDieHandle;
+        }
+
+        private void OnDestroy() {
+            SessionManager.Instance.OnRetry -= OnRetryHandle;
+            Player.OnDie -= OnDieHandle;
         }
 
         private void Update() {
@@ -31,6 +33,16 @@ namespace IntoTheAbyss.Game {
                 Player.OnEveryCellFall?.Invoke();
                 m_nextCell -= m_cellHeight;
             }
+        }
+
+        private void OnRetryHandle() {
+            m_speed = 3f;
+            m_nextSection = 0;
+            m_nextCell = 0;
+        }
+
+        private void OnDieHandle() {
+            m_speed = 0.5f;
         }
     }
 }

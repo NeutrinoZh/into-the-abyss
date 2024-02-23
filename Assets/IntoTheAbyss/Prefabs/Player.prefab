@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f3c1ccab1fccf75af83305a2e113e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_brokenPlayerPrefab: {fileID: 7196840752596218590, guid: 313784d3e6258a797bad58ec16aa6290, type: 3}
+  m_brokenPlayerPrefab: {fileID: 6274423000746728939, guid: 313784d3e6258a797bad58ec16aa6290, type: 3}
   m_normalPlayer: {fileID: 7755749793378110537}
   m_dieAnimationDuration: 3
 --- !u!114 &607304705410019590
@@ -746,11 +746,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: aeca492b3dbc328578db0f2d4a1f8dd2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: aeca492b3dbc328578db0f2d4a1f8dd2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: aeca492b3dbc328578db0f2d4a1f8dd2, type: 3}
       propertyPath: m_LocalPosition.x

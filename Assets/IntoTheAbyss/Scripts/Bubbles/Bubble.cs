@@ -2,7 +2,7 @@ using UnityEngine;
 
 
 namespace IntoTheAbyss.Game {
-    public class Drumstick : MonoBehaviour {
+    public class Bubble : MonoBehaviour {
         [SerializeField] private int m_cellCountToDespawn;
         private int m_cellCount = 0;
 
@@ -18,7 +18,7 @@ namespace IntoTheAbyss.Game {
         private void IncermentCellCount() {
             m_cellCount += 1;
             if (m_cellCount >= m_cellCountToDespawn)
-                DrumstickManager.Instance.DestroyDrumstick(transform);
+                BubblesManager.Instance.DestroyBubble(transform);
         }
     }
 }
