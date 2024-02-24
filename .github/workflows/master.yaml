@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-      - ci
     paths:
       - "Assets/**"
       - "Packages/**"
@@ -22,6 +21,8 @@ jobs:
     name: Build for Androind
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+
       - uses: game-ci/unity-builder@v2
         with:
           targetPlatform: Android
