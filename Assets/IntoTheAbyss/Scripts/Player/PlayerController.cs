@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
 
 namespace IntoTheAbyss.Game {
     public class PlayerController : MonoBehaviour {
@@ -12,7 +13,7 @@ namespace IntoTheAbyss.Game {
         [SerializeField] private float m_rightBorder;
 
         private PlayerInput m_input;
-        private bool m_can_swap = true;
+        private bool m_can_slide = true;
 
         private void Awake() {
             m_input = GetComponent<PlayerInput>();
@@ -20,31 +21,35 @@ namespace IntoTheAbyss.Game {
         }
 
         private void Start() {
-            m_input.Input.Player.Touch.canceled += ProccessTouch;
+            m_input.Input.Player.Touch.performed += ProccessTouch;
         }
 
-        private void Update() {
-            Vector2 swipeDelta = m_input.Input.Player.Swipe.ReadValue<Vector2>();
+        private void OnDestroy() {
+            m_input.Input.Player.Touch.performed -= ProccessTouch;
+        }
 
-            if (swipeDelta.x > m_sensitivity && m_can_swap) {
+        private void ProccessTouch(InputAction.CallbackContext _context) {
+            var touch = _context.ReadValue<TouchState>();
+            Vector2 slideDelta = touch.position - touch.startPosition;
+
+            if (slideDelta.x > m_sensitivity && m_can_slide) {
                 if (transform.position.x < m_rightBorder)
                     transform.position += m_step;
 
                 Player.OnSlide?.Invoke();
-                m_can_swap = false;
+                m_can_slide = false;
             }
 
-            if (swipeDelta.x < -m_sensitivity && m_can_swap) {
+            if (slideDelta.x < -m_sensitivity && m_can_slide) {
                 if (transform.position.x > m_leftBorder)
                     transform.position -= m_step;
 
                 Player.OnSlide?.Invoke();
-                m_can_swap = false;
+                m_can_slide = false;
             }
-        }
 
-        private void ProccessTouch(InputAction.CallbackContext _) {
-            m_can_swap = true;
+            if (slideDelta.x == 0)
+                m_can_slide = true;
         }
     }
 }

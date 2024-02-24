@@ -40,12 +40,12 @@ namespace IntoTheAbyss
                 },
                 {
                     ""name"": ""Touch"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""33bad5b2-8871-4aa3-8e34-080c61316867"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Touch"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -63,7 +63,7 @@ namespace IntoTheAbyss
                 {
                     ""name"": """",
                     ""id"": ""9c8665be-ccd1-48d1-8762-29f9fbb93e12"",
-                    ""path"": ""<Touchscreen>/Press"",
+                    ""path"": ""<Touchscreen>/primaryTouch"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
