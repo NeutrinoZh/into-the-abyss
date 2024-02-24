@@ -1,3 +1,5 @@
+using DG.Tweening;
+
 using UnityEngine;
 
 namespace IntoTheAbyss.Game {
@@ -8,8 +10,11 @@ namespace IntoTheAbyss.Game {
         [SerializeField] private float m_sectionHeight;
         [SerializeField] private float m_cellHeight;
 
+        [SerializeField] private float m_startSpeed;
         [SerializeField] private float m_speed;
         [SerializeField] private float m_acceleration;
+
+        [SerializeField] private float m_slowdownDuration;
 
         private void Start() {
             SessionManager.Instance.OnRetry += OnRetryHandle;
@@ -36,13 +41,18 @@ namespace IntoTheAbyss.Game {
         }
 
         private void OnRetryHandle() {
-            m_speed = 3f;
+            m_speed = m_startSpeed;
             m_nextSection = 0;
             m_nextCell = 0;
         }
 
         private void OnDieHandle() {
-            m_speed = 0.5f;
+            DOTween.To(
+                () => m_speed,
+                speed => m_speed = speed,
+                0,
+                m_slowdownDuration
+            );
         }
     }
 }
