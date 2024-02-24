@@ -90,6 +90,7 @@ MonoBehaviour:
   m_sensitivity: 50
   m_leftBorder: 1
   m_rightBorder: 3
+  m_slideDuration: 0.1
 --- !u!114 &7676104502237842972
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
+using DG.Tweening.Core;
+using DG.Tweening;
 
 namespace IntoTheAbyss.Game {
     public class PlayerController : MonoBehaviour {
@@ -12,8 +14,10 @@ namespace IntoTheAbyss.Game {
         [SerializeField] private float m_leftBorder;
         [SerializeField] private float m_rightBorder;
 
+        [SerializeField] private float m_slideDuration;
+
         private PlayerInput m_input;
-        private bool m_can_slide = true;
+        private bool m_canSlide = true;
 
         private void Awake() {
             m_input = GetComponent<PlayerInput>();
@@ -28,28 +32,39 @@ namespace IntoTheAbyss.Game {
             m_input.Input.Player.Touch.performed -= ProccessTouch;
         }
 
+        private void Slide(float _shift) {
+            DOTween.To(
+                () => transform.position.x,
+                x => transform.position = new Vector3(
+                    x, transform.position.y, transform.position.z
+                ),
+                transform.position.x + _shift,
+                m_slideDuration
+            );
+        }
+
         private void ProccessTouch(InputAction.CallbackContext _context) {
             var touch = _context.ReadValue<TouchState>();
             Vector2 slideDelta = touch.position - touch.startPosition;
 
-            if (slideDelta.x > m_sensitivity && m_can_slide) {
+            if (slideDelta.x > m_sensitivity && m_canSlide) {
                 if (transform.position.x < m_rightBorder)
-                    transform.position += m_step;
+                    Slide(m_step.x);
 
                 Player.OnSlide?.Invoke();
-                m_can_slide = false;
+                m_canSlide = false;
             }
 
-            if (slideDelta.x < -m_sensitivity && m_can_slide) {
+            if (slideDelta.x < -m_sensitivity && m_canSlide) {
                 if (transform.position.x > m_leftBorder)
-                    transform.position -= m_step;
+                    Slide(-m_step.x);
 
                 Player.OnSlide?.Invoke();
-                m_can_slide = false;
+                m_canSlide = false;
             }
 
             if (slideDelta.x == 0)
-                m_can_slide = true;
+                m_canSlide = true;
         }
     }
 }
