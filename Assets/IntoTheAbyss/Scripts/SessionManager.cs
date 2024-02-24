@@ -32,8 +32,8 @@ namespace IntoTheAbyss.Game {
         }
 
         public int HighScore {
-            get => PlayerPrefs.GetInt("HighScore");
-            set => PlayerPrefs.SetInt("HighScore", value);
+            get => PlayerPrefs.GetInt("highScore");
+            set => PlayerPrefs.SetInt("highScore", value);
         }
 
         [SerializeField] private UIPages m_pages;

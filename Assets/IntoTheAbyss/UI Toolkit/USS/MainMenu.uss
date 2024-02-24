@@ -7,9 +7,17 @@
 }
 
 #retry__button {
-    background-image: url('project://database/Assets/IntoTheAbyss/Art/UI/popup.png?fileID=1304021772&guid=94e2cfe31e8f8f80a8bded63021c9cde&type=3#popup_1');
+    background-image: url('project://database/Assets/IntoTheAbyss/Art/UI/Popup.png?fileID=1304021772&guid=94e2cfe31e8f8f80a8bded63021c9cde&type=3#popup_1');
 }
 
 .retry #retry__button {
-    background-image: url('project://database/Assets/IntoTheAbyss/Art/UI/popup.png?fileID=839851380&guid=94e2cfe31e8f8f80a8bded63021c9cde&type=3#popup_3');
+    background-image: url('project://database/Assets/IntoTheAbyss/Art/UI/Popup.png?fileID=839851380&guid=94e2cfe31e8f8f80a8bded63021c9cde&type=3#popup_3');
+}
+
+#sound__button {
+    background-image: url('project://database/Assets/IntoTheAbyss/Art/UI/Popup.png?fileID=-297179141&guid=94e2cfe31e8f8f80a8bded63021c9cde&type=3#popup_2');
+}
+
+.sound-off #sound__button {
+    background-image: url('project://database/Assets/IntoTheAbyss/Art/UI/Popup.png?fileID=-1612635230&guid=94e2cfe31e8f8f80a8bded63021c9cde&type=3#popup_4');
 }

@@ -14,6 +14,7 @@ namespace IntoTheAbyss.UI {
         private Label m_highScore;
         private Label m_retryLbl;
         private Button m_retryBtn;
+        private Button m_soundBtn;
         private VisualElement m_popup;
 
         private string m_scorePattern;
@@ -22,25 +23,11 @@ namespace IntoTheAbyss.UI {
         private const string c_mainMenuPopupId = "mainmenu__popup";
         private const string c_scoreId = "score__label";
         private const string c_highScoreId = "high-score__label";
+        private const string c_soundId = "sound__button";
         private const string c_retryButtonId = "retry__button";
         private const string c_retryLabelId = "retry__label";
         private const string c_retryClass = "retry";
-
-        private void Awake() {
-            m_document = GetComponent<UIDocument>();
-            m_popup = m_document.rootVisualElement.Query<VisualElement>(c_mainMenuPopupId);
-            m_score = m_document.rootVisualElement.Query<Label>(c_scoreId);
-            m_highScore = m_document.rootVisualElement.Query<Label>(c_highScoreId);
-            m_retryLbl = m_document.rootVisualElement.Query<Label>(c_retryLabelId);
-            m_retryBtn = m_document.rootVisualElement.Query<Button>(c_retryButtonId);
-
-            // 
-            m_scorePattern = m_score.text;
-            m_highScorePattern = m_highScore.text;
-            m_retryBtn.clicked += () => OnRetry?.Invoke();
-
-            Show(false);
-        }
+        private const string c_soundOffClass = "sound-off";
 
         public void Show(bool _isRetry = true) {
             m_document.rootVisualElement.style.display = DisplayStyle.Flex;
@@ -57,6 +44,42 @@ namespace IntoTheAbyss.UI {
 
         public void Hide() {
             m_document.rootVisualElement.style.display = DisplayStyle.None;
+        }
+
+        private void Awake() {
+            m_document = GetComponent<UIDocument>();
+            m_popup = m_document.rootVisualElement.Query<VisualElement>(c_mainMenuPopupId);
+            m_score = m_document.rootVisualElement.Query<Label>(c_scoreId);
+            m_highScore = m_document.rootVisualElement.Query<Label>(c_highScoreId);
+            m_retryLbl = m_document.rootVisualElement.Query<Label>(c_retryLabelId);
+            m_retryBtn = m_document.rootVisualElement.Query<Button>(c_retryButtonId);
+            m_soundBtn = m_document.rootVisualElement.Query<Button>(c_soundId);
+
+            // 
+            m_scorePattern = m_score.text;
+            m_highScorePattern = m_highScore.text;
+            m_retryBtn.clicked += Retry;
+            m_soundBtn.clicked += TurnSound;
+
+            Show(false);
+        }
+
+        private void OnDestroy() {
+            m_retryBtn.clicked -= Retry;
+            m_soundBtn.clicked -= TurnSound;
+        }
+
+        private void Retry() {
+            OnRetry?.Invoke();
+        }
+
+        private void TurnSound() {
+            AudioListener.volume = (int)AudioListener.volume == 1 ? 0 : 1;
+
+            if (m_popup.ClassListContains(c_soundOffClass))
+                m_popup.RemoveFromClassList(c_soundOffClass);
+            else
+                m_popup.AddToClassList(c_soundOffClass);
         }
     }
 }

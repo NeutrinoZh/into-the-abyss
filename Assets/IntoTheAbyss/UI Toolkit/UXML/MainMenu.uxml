@@ -13,7 +13,7 @@
                 <ui:Label tabindex="-1" text="Retry" parse-escape-sequences="true" display-tooltip-when-elided="true" name="retry__label" style="font-size: 25px; -unity-font-style: bold;" />
             </ui:VisualElement>
             <ui:VisualElement name="footer__container" style="flex-grow: 1; justify-content: center; flex-shrink: 1; height: 80px; max-height: 80px;">
-                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="sound__button" style="background-image: url(&apos;project://database/Assets/IntoTheAbyss/Art/UI/Popup.png?fileID=-297179141&amp;guid=94e2cfe31e8f8f80a8bded63021c9cde&amp;type=3#popup_2&apos;); background-color: rgba(0, 0, 0, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-shrink: 1; flex-grow: 2; max-width: 80px; max-height: 80px; width: 80px; height: 80px;" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="sound__button" style="background-color: rgba(0, 0, 0, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-shrink: 1; flex-grow: 2; max-width: 80px; max-height: 80px; width: 80px; height: 80px;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

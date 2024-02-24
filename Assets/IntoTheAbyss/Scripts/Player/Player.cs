@@ -10,6 +10,7 @@ namespace IntoTheAbyss.Game {
             if (Instance) {
                 Debug.LogWarning("Only one instance of Player can be instantinate");
                 Destroy(gameObject);
+                return;
             } else
                 Instance = this;
         }
