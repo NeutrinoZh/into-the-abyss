@@ -11,6 +11,7 @@ Thumbs.db
 *.blob
 
 *.csproj
+*.sln
 .vsconfig
 
 .vs/
