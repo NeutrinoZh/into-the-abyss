@@ -27,7 +27,7 @@ namespace IntoTheAbyss.Game {
         }
 
         private void PlayBubblesFX() {
-            //m_bubblesFX.Play();
+            m_bubblesFX.Play();
             m_bubblesSound.Play();
         }
 
