@@ -14,7 +14,7 @@ namespace IntoTheAbyss.Game {
                 Instance = this;
         }
 
-        public static Action OnEat = null;
+        public static Action OnInhale = null;
         public static Action OnDie = null;
         public static Action OnAfterDie = null;
         public static Action OnPerSectionFall = null;

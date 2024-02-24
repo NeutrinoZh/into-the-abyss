@@ -39,15 +39,15 @@ namespace IntoTheAbyss.Game {
         [SerializeField] private UIPages m_pages;
 
         private void Start() {
-            Player.OnEat += Scoring;
+            Player.OnInhale += Scoring;
             Player.OnAfterDie += DieHandle;
 
             m_pages.Menu.OnRetry += RetryHandle;
         }
 
         private void OnDestroy() {
-            Player.OnEat -= Scoring;
-            Player.OnEat -= DieHandle;
+            Player.OnInhale -= Scoring;
+            Player.OnInhale -= DieHandle;
         }
 
         private void Scoring() {

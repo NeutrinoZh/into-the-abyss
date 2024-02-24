@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cac791a8b6a8e5438c5517eb02f9272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_crunchSound: {fileID: 1400668917085517964}
+  m_bubblesSound: {fileID: 1400668917085517964}
   m_slideSound: {fileID: 2214295268252554825}
   m_deathSound: {fileID: 2266894702079091923}
 --- !u!50 &5301766843859867784
@@ -203,7 +203,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.8162334}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -214,7 +214,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.75, y: 0.75}
+  m_Size: {x: 0.75, y: 1.5369039}
   m_EdgeRadius: 0
 --- !u!95 &5163424462941374915
 Animator:
@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 376032132533573136}
   - component: {fileID: 1400668917085517964}
   m_Layer: 0
-  m_Name: CrunchSound
+  m_Name: BubblesSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -535,9 +535,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 85f1c85c22659c55290104b7b841eec4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a856c8de70b9c294bae2efbc2afe1007, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -633,7 +633,7 @@ GameObject:
   - component: {fileID: 8598761347843288831}
   - component: {fileID: 8500575464978958096}
   m_Layer: 0
-  m_Name: EatFX
+  m_Name: BubblesFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -648,7 +648,7 @@ Transform:
   m_GameObject: {fileID: 7228882592080120938}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.838, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

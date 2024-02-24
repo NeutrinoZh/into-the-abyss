@@ -12,7 +12,7 @@ namespace IntoTheAbyss.Game {
                 return;
 
             BubblesManager.Instance.DestroyBubble(drumstick.transform);
-            Player.OnEat?.Invoke();
+            Player.OnInhale?.Invoke();
         }
     }
 }
