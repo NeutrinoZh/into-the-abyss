@@ -31,6 +31,14 @@ jobs:
           restore-keys: |
             Library-
 
+      - name: Free Disk Space for Android
+        run: |
+          sudo swapoff -a
+          sudo rm -f /swapfile
+          sudo apt clean
+          docker rmi $(docker image ls -aq)
+          df -h
+
       - name: Build artifacs
         uses: game-ci/unity-builder@v4
         env:
