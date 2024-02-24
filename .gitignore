@@ -16,8 +16,12 @@ Thumbs.db
 
 .vs/
 obj/
-Build/
-Library/
-UserSettings/
-Temp/
-Logs/
+
+[Bb]uild/
+[Ll]ibrary/
+[Uu]serSettings/
+[Tt]emp/
+[Ll]ogs/
+
+/[Aa]rtifacts/
+/[Cc]odeCoverage/
