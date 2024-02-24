@@ -1,0 +1,32 @@
+name: Test, Build, and Deploy with GameCI
+
+on:
+  push:
+    branches:
+      - master
+      - ci
+    paths:
+      - "Assets/**"
+      - "Packages/**"
+      - "ProjectSettings/**"
+  pull_request:
+    branches:
+      - master
+    paths:
+      - "Assets/**"
+      - "Packages/**"
+      - "ProjectSettings/**"
+
+jobs:
+  buildAndroid:
+    name: Build for Androind
+    runs-on: ubuntu-latest
+    steps:
+      - uses: game-ci/unity-builder@v2
+        with:
+          targetPlatform: Android
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: build-Android
+          path: build/Android
