@@ -1,8 +1,5 @@
 name: Test, Build, and Deploy with GameCI
 
-env:
-  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-
 on:
   push:
     branches:
@@ -24,15 +21,27 @@ jobs:
     name: Build for Androind
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-
 
       - name: Build artifacs
-        uses: game-ci/unity-builder@v2
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: Android
 
       - name: Upload artifacs
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: build-Android
           path: build/Android
