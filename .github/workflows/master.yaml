@@ -8,13 +8,6 @@ on:
       - "Assets/**"
       - "Packages/**"
       - "ProjectSettings/**"
-  pull_request:
-    branches:
-      - master
-    paths:
-      - "Assets/**"
-      - "Packages/**"
-      - "ProjectSettings/**"
 
 jobs:
   buildAndroid:
