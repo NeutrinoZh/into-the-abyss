@@ -6,7 +6,7 @@ A straightforward endless runner game plunging into the depths of the abyss.
 
 This project follows best practices and utilizes various technologies to create a robust and maintainable game application. 
 
-![](./imgs/gameplay_1.png)
+![](./imgs/gameplay_0.png)
 
 ## Features
 
