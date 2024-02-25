@@ -1,3 +1,5 @@
+using System;
+
 using UnityEngine;
 using UnityEngine.Advertisements;
 
@@ -8,6 +10,8 @@ namespace IntoTheAbyss.Ads {
         [SerializeField] private bool m_testMode = true;
 
         private string m_gameId;
+
+        public event Action OnInitComplete = null;
 
         void Awake() {
             InitializeAds();
@@ -28,6 +32,7 @@ namespace IntoTheAbyss.Ads {
 
         public void OnInitializationComplete() {
             Debug.Log("Unity Ads initialization complete.");
+            OnInitComplete?.Invoke();
         }
 
         public void OnInitializationFailed(UnityAdsInitializationError error, string message) {
