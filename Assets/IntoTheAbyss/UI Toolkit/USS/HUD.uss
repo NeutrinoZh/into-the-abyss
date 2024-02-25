@@ -1,0 +1,24 @@
+#pause__button {
+    background-image: url('project://database/Assets/IntoTheAbyss/Art/UI/Popup.png?fileID=591519727&guid=94e2cfe31e8f8f80a8bded63021c9cde&type=3#Popup_0');
+}
+
+.paused #pause__button {
+    background-image: url('project://database/Assets/IntoTheAbyss/Art/UI/Popup.png?fileID=1304021772&guid=94e2cfe31e8f8f80a8bded63021c9cde&type=3#popup_1');
+}
+
+#hud__container {
+    transition: all ease 0.5s;
+}
+
+#hud__container.paused {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#pause__label {
+    color: rgb(27, 27, 27);
+    visibility: hidden;
+}
+
+.paused #pause__label {
+    visibility: visible;
+}

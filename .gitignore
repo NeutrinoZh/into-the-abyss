@@ -17,6 +17,8 @@ Thumbs.db
 .vs/
 obj/
 
+*.png~
+
 [Bb]uild/
 [Ll]ibrary/
 [Uu]serSettings/
