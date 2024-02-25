@@ -1,10 +1,12 @@
 # Into The Abyss
 
-The most simple clicker game about an endless fall into the abyss
+A straightforward endless runner game plunging into the depths of the abyss.
 
 ## Overview
 
 This project follows best practices and utilizes various technologies to create a robust and maintainable game application. 
+
+![](./imgs/gameplay_1.png)
 
 ## Features
 
@@ -14,9 +16,19 @@ This project follows best practices and utilizes various technologies to create 
 
 - **URP (VFX Graphs/Shader Graphs):** The Universal Render Pipeline (URP) is utilized along with Visual Effects Graphs and Shader Graphs to achieve stunning visual effects.
 
+- **Dotween**: Dotween is integrated for smooth and seamless animations, enhancing the overall gameplay experience.
+
+- **PSD Importer**: Utilizing PSD Importer streamlines the workflow by enabling direct import of Photoshop files, expediting asset integration and iteration.
+
+- **Bone-Based Animations**: Animations are created using bone-based animation techniques, offering fluid and lifelike character movements.
+
+- **Unity Ads**: Integration with Unity Ads provides opportunities for monetization through in-game advertisements, allowing for revenue generation while maintaining a seamless gaming experience.
+
 ## Tools and Workflow
 
 - **Code Quality with Dotnet Formatter:** To maintain high code quality and ensure a consistent coding style, we've configured a .editorconfig file. This file includes predefined rules for naming conventions, indentation, and other code formatting preferences. 
+
+- **CI/CD with GitHub Actions and Game CI**: Continuous Integration and Continuous Deployment pipelines are set up using GitHub Actions and Game CI, automating the build and testing processes for efficient development workflows.
 
 ## Getting Started
 
