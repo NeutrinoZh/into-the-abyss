@@ -6,7 +6,7 @@ namespace IntoTheAbyss.Ads {
         [SerializeField] private string m_androidAdUnitId = "Interstitial_Android";
         [SerializeField] private string m_iosAdUnitId = "Interstitial_iOS";
 
-        private string m_adUnitId = "";
+        private string m_adUnitId = null;
         private bool m_loaded = false;
 
         private void Awake() {
@@ -15,7 +15,7 @@ namespace IntoTheAbyss.Ads {
                 : m_androidAdUnitId;
         }
 
-        public void LoadAd() {
+        public void Load() {
             Debug.Log("Loading Ad: " + m_adUnitId);
             Advertisement.Load(m_adUnitId, this);
         }
