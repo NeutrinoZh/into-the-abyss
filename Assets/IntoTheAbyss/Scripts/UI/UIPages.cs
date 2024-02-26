@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace IntoTheAbyss.UI {
     public class UIPages : MonoBehaviour {
+        [SerializeField] private Leaderboard m_leaderboardUI;
         [SerializeField] private Menu m_menuUI;
         [SerializeField] private HUD m_hudUI;
 
@@ -14,6 +15,7 @@ namespace IntoTheAbyss.UI {
             m_menuUI.OnRetry += RetryHandle;
 
             m_hudUI.Hide();
+            m_leaderboardUI.Hide();
             Time.timeScale = 0;
         }
 
@@ -24,16 +26,32 @@ namespace IntoTheAbyss.UI {
 
         private void DieHandle() {
             Time.timeScale = 0;
-
-            m_hudUI.Hide();
-            m_menuUI.Show();
+            ShowHome();
         }
 
         private void RetryHandle() {
             Time.timeScale = 1;
+            ShowHUD();
+        }
 
-            m_hudUI.Show();
+        //============================================//
+
+        public void ShowHUD() {
             m_menuUI.Hide();
+            m_leaderboardUI.Hide();
+            m_hudUI.Show();
+        }
+
+        public void ShowLeaderboard() {
+            m_hudUI.Hide();
+            m_menuUI.Hide();
+            m_leaderboardUI.Show();
+        }
+
+        public void ShowHome() {
+            m_hudUI.Hide();
+            m_leaderboardUI.Hide();
+            m_menuUI.Show();
         }
     }
 }
