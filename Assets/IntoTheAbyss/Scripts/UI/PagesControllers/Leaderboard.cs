@@ -7,7 +7,6 @@ namespace IntoTheAbyss.UI {
         private UIDocument m_document;
 
         private Button m_homeBtn;
-
         private const string c_homeButtonId = "home__button";
 
         private void Awake() {
