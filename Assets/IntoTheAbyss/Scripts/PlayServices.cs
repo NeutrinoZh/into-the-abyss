@@ -6,7 +6,7 @@ using GooglePlayGames.BasicApi;
 using System;
 
 namespace IntoTheAbyss {
-    public class InitUnityServices : MonoBehaviour {
+    public class PlayServices : MonoBehaviour {
         public string Token;
 
         private async void Awake() {
@@ -23,33 +23,33 @@ namespace IntoTheAbyss {
         public void LoginGooglePlayGames() {
             PlayGamesPlatform.Instance.Authenticate((success) => {
                 if (success == SignInStatus.Success) {
-                    Debug.Log($"{nameof(InitUnityServices)} Login with Google Play games successful.");
+                    Debug.Log($"{nameof(PlayServices)} Login with Google Play games successful.");
 
                     PlayGamesPlatform.Instance.RequestServerSideAccess(true, code => {
-                        Debug.Log($"{nameof(InitUnityServices)} Authorization code: " + code);
+                        Debug.Log($"{nameof(PlayServices)} Authorization code: " + code);
                         Token = code;
                         SignInPlayServices();
                     });
                 } else {
-                    Debug.Log($"{nameof(InitUnityServices)} Login Unsuccessful");
+                    Debug.Log($"{nameof(PlayServices)} Login Unsuccessful");
                 }
             });
         }
 
         public async void SignInPlayServices() {
             AuthenticationService.Instance.SignedIn += () => {
-                Debug.Log($"{nameof(InitUnityServices)} PlayerID: {AuthenticationService.Instance.PlayerId}");
-                Debug.Log($"{nameof(InitUnityServices)} Access Token: {AuthenticationService.Instance.AccessToken}");
+                Debug.Log($"{nameof(PlayServices)} PlayerID: {AuthenticationService.Instance.PlayerId}");
+                Debug.Log($"{nameof(PlayServices)} Access Token: {AuthenticationService.Instance.AccessToken}");
 
             };
 
-            AuthenticationService.Instance.SignInFailed += err => Debug.LogError($"{nameof(InitUnityServices)} {err}");
-            AuthenticationService.Instance.SignedOut += () => Debug.Log($"{nameof(InitUnityServices)} Player signed out.");
-            AuthenticationService.Instance.Expired += () => Debug.Log($"{nameof(InitUnityServices)} Player session could not be refreshed and expired.");
+            AuthenticationService.Instance.SignInFailed += err => Debug.LogError($"{nameof(PlayServices)} {err}");
+            AuthenticationService.Instance.SignedOut += () => Debug.Log($"{nameof(PlayServices)} Player signed out.");
+            AuthenticationService.Instance.Expired += () => Debug.Log($"{nameof(PlayServices)} Player session could not be refreshed and expired.");
 
             try {
                 await AuthenticationService.Instance.SignInWithGooglePlayGamesAsync(Token);
-                Debug.Log($"{nameof(InitUnityServices)} SignIn is successful.");
+                Debug.Log($"{nameof(PlayServices)} SignIn is successful.");
             } catch (AuthenticationException ex) {
                 Debug.LogException(ex);
             } catch (RequestFailedException ex) {

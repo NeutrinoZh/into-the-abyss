@@ -1616,7 +1616,7 @@ GameObject:
   - component: {fileID: 1817882648}
   - component: {fileID: 1817882649}
   m_Layer: 0
-  m_Name: UnityServices
+  m_Name: PlayServices
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1649,6 +1649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf94aeab8916153919bf363a0b2dcba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Token: 
 --- !u!1 &1826711724
 GameObject:
   m_ObjectHideFlags: 0
