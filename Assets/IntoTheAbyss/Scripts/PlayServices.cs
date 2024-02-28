@@ -4,23 +4,28 @@ using Unity.Services.Authentication;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using System;
+using System.Threading.Tasks;
 
 namespace IntoTheAbyss {
     public class PlayServices : MonoBehaviour {
         public string Token;
 
-        private async void Awake() {
+        private void Awake() {
+            PlayGamesPlatform.Activate();
+        }
+
+        private async void Start() {
             try {
                 await UnityServices.InitializeAsync();
+                await LoginGooglePlayGames();
+                await SignInPlayServices();
             } catch (Exception e) {
                 Debug.LogException(e);
             }
-
-            PlayGamesPlatform.Activate();
-            LoginGooglePlayGames();
         }
 
-        public void LoginGooglePlayGames() {
+        public Task LoginGooglePlayGames() {
+            var tcs = new TaskCompletionSource<object>();
             PlayGamesPlatform.Instance.Authenticate((success) => {
                 if (success == SignInStatus.Success) {
                     Debug.Log($"{nameof(PlayServices)} Login with Google Play games successful.");
@@ -28,15 +33,17 @@ namespace IntoTheAbyss {
                     PlayGamesPlatform.Instance.RequestServerSideAccess(true, code => {
                         Debug.Log($"{nameof(PlayServices)} Authorization code: " + code);
                         Token = code;
-                        SignInPlayServices();
+                        tcs.SetResult(null);
                     });
                 } else {
-                    Debug.Log($"{nameof(PlayServices)} Login Unsuccessful");
+                    Debug.Log($"{nameof(PlayServices)} Login Unsuccessful: {success}");
+                    tcs.SetException(new Exception("Failed"));
                 }
             });
+            return tcs.Task;
         }
 
-        public async void SignInPlayServices() {
+        public async Task SignInPlayServices() {
             AuthenticationService.Instance.SignedIn += () => {
                 Debug.Log($"{nameof(PlayServices)} PlayerID: {AuthenticationService.Instance.PlayerId}");
                 Debug.Log($"{nameof(PlayServices)} Access Token: {AuthenticationService.Instance.AccessToken}");
