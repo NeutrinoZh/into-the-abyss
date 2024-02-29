@@ -57,6 +57,7 @@ namespace IntoTheAbyss.Game {
         private void DieHandle() {
             if (Score > HighScore)
                 HighScore = Score;
+            LeaderboardAPI.AddScore(HighScore);
         }
 
         private void RetryHandle() {

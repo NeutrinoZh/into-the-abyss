@@ -16,11 +16,11 @@ namespace IntoTheAbyss.UI {
             };
 
             m_nickname = new() {
-                text = "#1 nickname"
+                text = "#0 placeholder"
             };
 
             m_score = new() {
-                text = "score"
+                text = "0"
             };
 
             line.Add(m_nickname);
@@ -29,9 +29,9 @@ namespace IntoTheAbyss.UI {
             Add(line);
         }
 
-        public void SetNameAndScore(int _place, string _nickname, int _score) {
+        public void SetNameAndScore(string _place, string _nickname, string _score) {
             m_nickname.text = $"#{_place} {_nickname}";
-            m_score.text = _score.ToString();
+            m_score.text = _score;
         }
     }
 }
