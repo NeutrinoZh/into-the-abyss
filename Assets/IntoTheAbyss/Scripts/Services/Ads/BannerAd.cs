@@ -9,13 +9,12 @@ namespace IntoTheAbyss.Ads {
         [SerializeField] private string m_iosAdUnitId = "Banner_iOS";
         private string m_adUnitId = null;
 
-        private void Start() {
+        private void Awake() {
 #if UNITY_IOS
-        _adUnitId = _iOSAdUnitId;
+            _adUnitId = _iOSAdUnitId;
 #elif UNITY_ANDROID
             m_adUnitId = m_androidAdUnitId;
 #endif
-            Advertisement.Banner.SetPosition(m_bannerPosition);
         }
 
         public void Load() {
@@ -24,12 +23,13 @@ namespace IntoTheAbyss.Ads {
                 errorCallback = OnBannerError
             };
 
+            Advertisement.Banner.SetPosition(m_bannerPosition);
             Advertisement.Banner.Load(m_adUnitId, options);
         }
 
         private void OnBannerLoaded() {
             Debug.Log("BannerAd loaded");
-            ShowBannerAd();
+            // ShowBannerAd();
         }
 
         private void OnBannerError(string message) {

@@ -13,7 +13,7 @@ namespace IntoTheAbyss.Ads {
 
         public event Action OnInitComplete = null;
 
-        void Awake() {
+        private void Start() {
             InitializeAds();
         }
 

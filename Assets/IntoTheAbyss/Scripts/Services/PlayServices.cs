@@ -17,8 +17,11 @@ namespace IntoTheAbyss {
         private async void Start() {
             try {
                 await UnityServices.InitializeAsync();
+#if UNITY_EDITOR
+#else
                 await LoginGooglePlayGames();
                 await SignInPlayServices();
+#endif
             } catch (Exception e) {
                 Debug.LogException(e);
             }

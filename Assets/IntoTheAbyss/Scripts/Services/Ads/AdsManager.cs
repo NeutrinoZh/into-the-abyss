@@ -15,7 +15,7 @@ namespace IntoTheAbyss.Ads {
         [SerializeField] private int m_attemptToShowAd;
         private int m_attempt = 0;
 
-        private void Start() {
+        private void Awake() {
             m_adsInit = GetComponent<AdsInit>();
             m_adsInit.OnInitComplete += Load;
 
