@@ -21,3 +21,11 @@
 .sound-off #sound__button {
     background-image: url('project://database/Assets/IntoTheAbyss/Art/UI/Popup.png?fileID=-1612635230&guid=94e2cfe31e8f8f80a8bded63021c9cde&type=3#popup_4');
 }
+
+#leaderboard__button {
+    background-image: url('project://database/Assets/IntoTheAbyss/Art/UI/Popup.png?fileID=1445864011&guid=94e2cfe31e8f8f80a8bded63021c9cde&type=3#Popup_4');
+}
+
+.signin #leaderboard__button {
+    background-image: url('project://database/Assets/IntoTheAbyss/Art/UI/Popup.png?fileID=24257354&guid=94e2cfe31e8f8f80a8bded63021c9cde&type=3#Popup_2');
+}

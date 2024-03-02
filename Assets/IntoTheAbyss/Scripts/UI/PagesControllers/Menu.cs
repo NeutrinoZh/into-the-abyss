@@ -2,6 +2,8 @@ using System;
 
 using IntoTheAbyss.Game;
 
+using Unity.Services.Authentication;
+
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -32,6 +34,7 @@ namespace IntoTheAbyss.UI {
         private const string c_retryClass = "retry";
         private const string c_soundOffClass = "sound-off";
         private const string c_leaderboardButtonId = "leaderboard__button";
+        private const string c_signinClass = "signin";
 
         public void Show(bool _isRetry = true) {
             m_document.rootVisualElement.style.display = DisplayStyle.Flex;
@@ -68,16 +71,23 @@ namespace IntoTheAbyss.UI {
             m_leaderboardBtn.clicked += SwitchToLeaderboard;
 
             Show(false);
+
+            PlayServices.OnSignIn += TurnOnSignIn;
         }
 
         private void OnDestroy() {
             m_retryBtn.clicked -= Retry;
             m_soundBtn.clicked -= TurnSound;
             m_leaderboardBtn.clicked -= SwitchToLeaderboard;
+            PlayServices.OnSignIn -= TurnOnSignIn;
         }
 
         private void Retry() {
             OnRetry?.Invoke();
+        }
+
+        private void TurnOnSignIn() {
+            m_popup.AddToClassList(c_signinClass);
         }
 
         private void TurnSound() {
@@ -90,7 +100,8 @@ namespace IntoTheAbyss.UI {
         }
 
         private void SwitchToLeaderboard() {
-            m_uiPages.ShowLeaderboard();
+            if (AuthenticationService.Instance.IsSignedIn)
+                m_uiPages.ShowLeaderboard();
         }
     }
 }

@@ -337,6 +337,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Popup_4
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 228
+        width: 183
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a03053ccf4f5788bba53b47c5949733
+      internalID: 1445864011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -352,6 +373,7 @@ TextureImporter:
       Popup_1: 380094666
       Popup_2: 24257354
       Popup_3: -1979111295
+      Popup_4: 1445864011
       popup_0: -1468175137
       popup_1: 1304021772
       popup_2: -297179141

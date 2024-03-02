@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace IntoTheAbyss {
     public class PlayServices : MonoBehaviour {
+        public static Action OnSignIn = null;
+
         public string Token;
 
         private void Awake() {
@@ -50,7 +52,7 @@ namespace IntoTheAbyss {
             AuthenticationService.Instance.SignedIn += () => {
                 Debug.Log($"{nameof(PlayServices)} PlayerID: {AuthenticationService.Instance.PlayerId}");
                 Debug.Log($"{nameof(PlayServices)} Access Token: {AuthenticationService.Instance.AccessToken}");
-
+                OnSignIn?.Invoke();
             };
 
             AuthenticationService.Instance.SignInFailed += err => Debug.LogError($"{nameof(PlayServices)} {err}");
