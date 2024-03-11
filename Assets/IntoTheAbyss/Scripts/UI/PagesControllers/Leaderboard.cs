@@ -18,9 +18,12 @@ namespace IntoTheAbyss.UI {
             m_table = m_document.rootVisualElement.Query<LeaderboardTable>(c_leadboardTabaleId);
             m_homeBtn = m_document.rootVisualElement.Query<Button>(c_homeButtonId);
             m_homeBtn.clicked += BackToHome;
+
+            PlayServices.OnSignIn += FetchData;
         }
 
         private void OnDestroy() {
+            PlayServices.OnSignIn -= FetchData;
             m_homeBtn.clicked -= BackToHome;
         }
 

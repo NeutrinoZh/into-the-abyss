@@ -5,7 +5,7 @@ namespace IntoTheAbyss {
         [SerializeField] private Transform m_target;
         [SerializeField] private Vector3 m_offset;
 
-        const float c_cameraSpeed = 60f;
+        const float c_cameraSpeed = 180f;
 
         private void Update() {
             Vector3 direction =

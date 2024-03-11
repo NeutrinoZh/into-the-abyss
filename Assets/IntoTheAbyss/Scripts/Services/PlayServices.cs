@@ -29,7 +29,7 @@ namespace IntoTheAbyss {
             }
         }
 
-        public Task LoginGooglePlayGames() {
+        private Task LoginGooglePlayGames() {
             var tcs = new TaskCompletionSource<object>();
             PlayGamesPlatform.Instance.Authenticate((success) => {
                 if (success == SignInStatus.Success) {
@@ -48,7 +48,7 @@ namespace IntoTheAbyss {
             return tcs.Task;
         }
 
-        public async Task SignInPlayServices() {
+        private async Task SignInPlayServices() {
             AuthenticationService.Instance.SignedIn += () => {
                 Debug.Log($"{nameof(PlayServices)} PlayerID: {AuthenticationService.Instance.PlayerId}");
                 Debug.Log($"{nameof(PlayServices)} Access Token: {AuthenticationService.Instance.AccessToken}");
@@ -61,7 +61,28 @@ namespace IntoTheAbyss {
 
             try {
                 await AuthenticationService.Instance.SignInWithGooglePlayGamesAsync(Token);
-                Debug.Log($"{nameof(PlayServices)} SignIn is successful.");
+                Debug.Log($"{nameof(PlayServices)} SignIn is successful. Token: {Token}");
+
+                var player = await AuthenticationService.Instance.GetPlayerInfoAsync();
+                Debug.Log($"{nameof(PlayServices)} Username: {player.Username}");
+
+                await LinkPlayServices();
+            } catch (AuthenticationException ex) {
+                Debug.LogException(ex);
+            } catch (RequestFailedException ex) {
+                Debug.LogException(ex);
+            }
+        }
+
+        private async Task LinkPlayServices() {
+            try {
+                await AuthenticationService.Instance.LinkWithGooglePlayGamesAsync(Token);
+                Debug.Log("Link is successful.");
+
+                var player = await AuthenticationService.Instance.GetPlayerInfoAsync();
+                Debug.Log($"{nameof(PlayServices)} Username: {player.Username}");
+            } catch (AuthenticationException ex) when (ex.ErrorCode == AuthenticationErrorCodes.AccountAlreadyLinked) {
+                Debug.LogError("This user is already linked with another account. Log in instead.");
             } catch (AuthenticationException ex) {
                 Debug.LogException(ex);
             } catch (RequestFailedException ex) {

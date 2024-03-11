@@ -24,7 +24,7 @@ namespace IntoTheAbyss.Ads {
             };
 
             Advertisement.Banner.SetPosition(m_bannerPosition);
-            Advertisement.Banner.Load(m_adUnitId, options);
+            //Advertisement.Banner.Load(m_adUnitId, options);
         }
 
         private void OnBannerLoaded() {
