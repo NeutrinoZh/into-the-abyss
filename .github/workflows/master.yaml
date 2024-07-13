@@ -32,10 +32,6 @@ jobs:
           docker rmi $(docker image ls -aq)
           df -h
 
-      - name: Activate Unity License
-        run: |
-          echo "${{ secrets.UNITY_LICENSE }}" > UnityLicenseFile.ulf
-          unity -quit -batchmode -manualLicenseFile UnityLicenseFile.ulf -logFile
       - name: Build artifacs
         uses: game-ci/unity-builder@v4
         env:

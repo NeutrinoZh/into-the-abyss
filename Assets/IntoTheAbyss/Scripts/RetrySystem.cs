@@ -10,10 +10,10 @@ namespace IntoTheAbyss.Game {
         private void Start() {
             SessionManager.Instance.OnRetry += Retry;
             foreach (var returnable in m_returnables)
-                m_positions.Add(returnable.transform.position);
+                m_positions.Add(returnable.transform.position); 
         }
 
-        private void Retry() {
+        private void Retry() { 
             for (int i = 0; i < m_returnables.Count; ++i)
                 m_returnables[i].transform.position = m_positions[i];
         }
