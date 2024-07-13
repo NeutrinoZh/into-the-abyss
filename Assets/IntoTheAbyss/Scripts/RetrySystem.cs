@@ -9,7 +9,7 @@ namespace IntoTheAbyss.Game {
 
         private void Start() {
             SessionManager.Instance.OnRetry += Retry;
-            foreach (var returnable in m_returnables)
+            foreach (var returnable in m_returnables) 
                 m_positions.Add(returnable.transform.position);
         }
 
