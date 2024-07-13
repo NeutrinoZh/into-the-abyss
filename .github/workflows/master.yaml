@@ -34,7 +34,7 @@ jobs:
 
       - name: Activate Unity License
         run: |
-          echo ${{ secrets.UNITY_LICENSE }} > UnityLicenseFile.ulf
+          echo "${{ secrets.UNITY_LICENSE }}" > UnityLicenseFile.ulf
           unity -quit -batchmode -manualLicenseFile UnityLicenseFile.ulf -logFile
 
       - name: Build artifacs
