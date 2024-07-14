@@ -13,8 +13,8 @@ namespace IntoTheAbyss.Game {
                 m_positions.Add(returnable.transform.position); 
         }
 
-        private void Retry() { 
-            for (int i = 0; i < m_returnables.Count; ++i)
+        private void Retry() {
+            for (int i = 0; i < m_returnables.Count; ++i) 
                 m_returnables[i].transform.position = m_positions[i];
         }
     }
