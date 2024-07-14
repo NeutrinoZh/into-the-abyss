@@ -6,8 +6,8 @@ namespace IntoTheAbyss.Game {
         [SerializeField] private int m_cellCountToDespawn;
         private int m_cellCount = 0;
 
-        private void OnEnable() {
-            m_cellCount = 0;
+        private void OnEnable() { 
+            m_cellCount = 0; 
             Player.OnEveryCellFall += IncermentCellCount;
         }
 
