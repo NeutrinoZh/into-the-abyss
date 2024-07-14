@@ -16,13 +16,19 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - uses: actions/cache@v3
         with:
-          path: Library
-          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-          restore-keys: |
-            Library-
+          lfs: "true"
+
+        # - uses: actions/cache@v3
+        #   with:
+        #     path: Library
+        #     key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+        #     restore-keys: |
+        #       Library-
+
+      - name: Set up Git LFS
+        shell: bash
+        run: git lfs install
 
       - name: Free Disk Space for Android
         run: |
